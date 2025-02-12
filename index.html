@@ -65,6 +65,11 @@
             display: flex;
             flex-direction: column;
             background: #181818;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: scale(1.05);
         }
 
         .image-area {
@@ -468,67 +473,39 @@
             height: 100%;
         }
 
-        /* Remove any specific hover styles that might be affecting Pixel Journeys */
-        .project-card::after {
-            display: none !important;
-        }
-
-        .project-card:hover::after {
-            display: none !important;
-        }
-
-        /* Ensure no hover transitions or effects */
-        .project-card,
-        .project-card * {
-            transition: none !important;
-            transform: none !important;
-        }
-
-        /* Completely stripped of all transitions, fading, and hover effects */
+        /* Remove any previous hover-related styles */
         .project-card {
             position: relative;
             height: 100%;
             display: flex;
             flex-direction: column;
             background: #181818;
+            transition: transform 0.3s ease;
         }
 
+        .project-card:hover {
+            transform: scale(1.05);
+        }
+
+        /* Ensure these styles don't interfere */
+        .project-card,
+        .project-card * {
+            transition: transform 0.3s ease;
+        }
+
+        /* Remove any conflicting transform styles */
+        .project-card::before,
+        .project-card::after {
+            transform: none;
+        }
+
+        /* Keep other necessary styles */
         .image-area {
             position: relative;
             width: 100%;
             aspect-ratio: 16/9;
             margin-bottom: 15px;
-        }
-
-        .project-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        /* Remove all previous hover-related classes */
-        .project-video,
-        .image-preview-area,
-        .project-card::after,
-        .project-card::before {
-            display: none !important;
-        }
-
-        .watch-gameplay {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: #1DB954;
-            color: white;
-            padding: 8px 12px;
-            border-radius: 5px;
-            font-size: 0.9em;
-            cursor: pointer;
-            border: none;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            z-index: 3;
+            overflow: hidden;
         }
 
         .project-info {
@@ -592,7 +569,7 @@
 
             <div class="about-section" style="text-align: center;">
                 <h2 style="color: #ffffff; font-size: 2em; margin-bottom: 20px;">About Me</h2>
-                <div style="width: 145px; height: 2px; background: #1DB954; margin: 24px auto;"></div>
+                <div style="width: 60px; height: 2px; background: #1DB954; margin: 24px auto;"></div>
                 <p style="line-height: 1.8; color: #b3b3b3;">Since childhood, gaming has been my passion, kindled by moments spent on my dad's laptop. Wondering about game development led me to choose it as my career, guided by a friend's suggestion. Learning Unity Engine, I started with in-game UI for friends, then progressed to cloning popular games. Now I am making various games across many platforms. I have learned more about APIs and using third-party plugins to enhance my projects. I have specialized a lot in Augmented Reality. Though I've learned much, I'm eager for continual growth in game development.</p>
             </div>
         </header>
