@@ -565,6 +565,123 @@
             opacity: 1 !important;
             transition: none !important;
         }
+
+        @media (max-width: 768px) {
+            /* Container adjustments */
+            .container {
+                padding: 15px;
+            }
+
+            /* Header adjustments */
+            .header {
+                padding: 20px;
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+
+            /* Profile section */
+            .profile-image {
+                width: 120px;
+                height: 120px;
+            }
+
+            .profile-section {
+                width: 100%;
+                text-align: center;
+            }
+
+            /* About section */
+            .about-section {
+                width: 100%;
+                text-align: center;
+            }
+
+            /* Projects grid */
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+                padding: 10px;
+            }
+
+            .project-card {
+                height: auto;
+            }
+
+            .image-area {
+                height: 200px;
+            }
+
+            .project-info {
+                padding: 12px;
+            }
+
+            .project-info h3 {
+                font-size: 1.1em;
+            }
+
+            .project-info p {
+                font-size: 0.9em;
+                line-height: 1.4;
+            }
+
+            /* Skills section */
+            .skills-section {
+                margin: 40px auto;
+            }
+
+            .skills-section > div {
+                padding: 20px;
+            }
+
+            /* Social links */
+            .social-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+            }
+
+            .social-link {
+                margin: 5px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            /* Even smaller screens */
+            .header {
+                padding: 15px;
+            }
+
+            .profile-image {
+                width: 100px;
+                height: 100px;
+            }
+
+            .project-info h3 {
+                font-size: 1em;
+            }
+
+            .project-info p {
+                font-size: 0.85em;
+            }
+
+            .image-area {
+                height: 180px;
+            }
+        }
+
+        /* Fix video modal for mobile */
+        @media (max-width: 768px) {
+            .video-modal .modal-content {
+                width: 95%;
+                margin: 10px;
+            }
+
+            .close-modal {
+                right: 5px;
+                top: -35px;
+            }
+        }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
