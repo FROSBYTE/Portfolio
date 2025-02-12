@@ -428,6 +428,30 @@
             padding: 20px;
         }
 
+        @media (max-width: 768px) {
+            .projects-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 30px;
+                padding: 15px;
+            }
+
+            .project-card:hover {
+                transform: scale(1.03); /* Smaller scale on mobile for better fit */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .projects-grid {
+                grid-template-columns: 1fr; /* Single column on very small screens */
+                gap: 25px;
+                padding: 10px;
+            }
+
+            .project-card:hover {
+                transform: scale(1.02); /* Even smaller scale on very small screens */
+            }
+        }
+
         .video-modal {
             display: none;
             position: fixed;
