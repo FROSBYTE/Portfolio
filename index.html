@@ -1026,8 +1026,15 @@
 
                 <div class="project-card">
                     <div class="image-area">
-                        <img src="https://img.itch.zone/aW1nLzE4NDI3NzUwLnBuZw==/315x250%23c/dZYUMH.png" alt="ElevenLabs Demo" class="project-image">
-                        <!-- No video preview for ElevenLabs Demo -->
+                        <img src="https://img.youtube.com/vi/Ndi0fHc8OWg/maxresdefault.jpg" alt="ElevenLabs Demo" class="project-image">
+                        <button class="invisible-button" onmouseenter="playVideo(this)" onmouseleave="stopVideo(this)"></button>
+                        <iframe 
+                            class="preview-video"
+                            src="https://www.youtube.com/embed/Ndi0fHc8OWg?enablejsapi=1&controls=0&modestbranding=1&mute=1"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                        </iframe>
                     </div>
                     <div class="project-info">
                         <h3 class="project-title">ElevenLabs Demo</h3>
