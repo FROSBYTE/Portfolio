@@ -228,6 +228,13 @@
                 text-align: center;
             }
             
+            .about-section > div:first-child {
+                position: static !important;
+                margin-bottom: 20px;
+                display: flex;
+                justify-content: center;
+            }
+            
             .project-image {
                 height: 160px;
             }
@@ -705,7 +712,12 @@
                 </div>
             </div>
 
-            <div class="about-section" style="text-align: center;">
+            <div class="about-section" style="text-align: center; position: relative;">
+                <div style="position: absolute; top: 0; right: 0;">
+                    <a href="ARJUN_M_2025_CV.pdf" download="ARJUN_M_2025_CV.pdf" class="social-link" style="background: #1DB954; color: #000000; font-weight: bold; padding: 10px 20px; border-radius: 25px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: all 0.3s ease;">
+                        <i class="fas fa-download"></i> Download CV
+                    </a>
+                </div>
                 <h2 style="color: #ffffff; font-size: 2em; margin-bottom: 20px;">About Me</h2>
                 <div style="width: 60px; height: 2px; background: #1DB954; margin: 0 auto 60px;"></div>
                 <p style="line-height: 1.8; color: #b3b3b3;">It all started with games on my dad's old laptop. What began as a childhood curiosity turned into a real passion for building digital experiences. Today, I'm a Unity developer creating original games and productivity-focused plugins — available on the Play Store and Unity Asset Store.</p>
@@ -984,7 +996,7 @@
                 <div style="width: 60px; height: 3px; background: #1DB954; margin: 0 auto;"></div>
             </div>
             
-            <div class="projects-grid" style="grid-template-columns: repeat(3, 1fr); max-width: 1000px; margin: 0 auto;">
+            <div class="projects-grid" style="grid-template-columns: repeat(4, 1fr); max-width: 1200px; margin: 0 auto;">
                 <div class="project-card">
                     <div class="image-area">
                         <img src="https://img.youtube.com/vi/BIx_hACjcYY/maxresdefault.jpg" alt="Photon Fusion Demo" class="project-image">
@@ -1069,6 +1081,26 @@
                     </div>
                 </div>
 
+                <div class="project-card">
+                    <div class="image-area">
+                        <img src="https://img.itch.zone/aW1nLzIzNjY1NzAyLnBuZw==/347x500/%2BNVRZN.png" alt="Learn AR" class="project-image">
+                        <!-- No invisible button or video preview for Learn AR -->
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Learn AR</h3>
+                        <p class="project-description">Developed an AR app to explore various applications and possibilities of augmented reality. Showcases AR use cases and experiences with Vuforia & AR Foundation. Features interactive AR demonstrations and educational content for understanding AR technology fundamentals.</p>
+                        <div style="display: flex; gap: 10px; margin-top: 15px; margin-bottom: 10px;">
+                            <a href="https://frosbyte.itch.io/learn-ar" target="_blank" class="social-link">Download APK</a>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 5px;">
+                            <i class="fas fa-tag" style="font-size: 0.9em; color: #666;"></i>
+                            <span style="font-size: 0.9em; color: #666;">
+                                <span style="color: #1DB954;">SDK Demo</span>, APK, AR Core, Vuforia, Augmented Reality
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
 
@@ -1110,6 +1142,11 @@
                     <!-- AI -->
                     <span style="background: #282828; color: #b3b3b3; padding: 8px 15px; border-radius: 20px; font-size: 0.9em;">AI Tools</span>
                     <span style="background: #282828; color: #b3b3b3; padding: 8px 15px; border-radius: 20px; font-size: 0.9em;">ElevenLabs</span>
+                    <span style="background: #282828; color: #b3b3b3; padding: 8px 15px; border-radius: 20px; font-size: 0.9em;">OpenAI API</span>
+                    <span style="background: #282828; color: #b3b3b3; padding: 8px 15px; border-radius: 20px; font-size: 0.9em;">Gemini API</span>
+                    
+                    <!-- Cloud Platforms -->
+                    <span style="background: #282828; color: #b3b3b3; padding: 8px 15px; border-radius: 20px; font-size: 0.9em;">Google Cloud</span>
                 </div>
             </div>
         </div>
