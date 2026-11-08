@@ -6,3 +6,6 @@
 ehthumbs.db
 Thumbs.db
 
+
+# Claude Code local files (keep out of the published Pages site)
+.claude/

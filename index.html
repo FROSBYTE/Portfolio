@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>Arjun M : Portfolio</title>
+    <link rel="icon" type="image/png" sizes="48x48" href="assets/icons/favicon-48.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/favicon-192.png">
+    <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
     <style>
         *, *::before, *::after {
             box-sizing: border-box;
@@ -698,7 +701,57 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        .work-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin: 0 auto 10px;
+            padding: 0 20px;
+        }
+        .work-tab {
+            background: #181818;
+            color: #b3b3b3;
+            border: 1px solid #282828;
+            border-radius: 25px;
+            padding: 10px 22px;
+            font-size: 1em;
+            font-family: inherit;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s ease;
+        }
+        .work-tab i { color: #1DB954; }
+        .work-tab:hover { color: #ffffff; border-color: #1DB954; }
+        .work-tab.active { background: #1DB954; color: #000000; border-color: #1DB954; font-weight: bold; }
+        .work-tab.active i { color: #000000; }
+        .work-tab:focus-visible { outline: 2px solid #1DB954; outline-offset: 2px; }
+        .work-panel[hidden] { display: none; }
+        .work-panel { animation: tabFade 0.3s ease; }
+        @keyframes tabFade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+        .contact-line { font-size: 1.1em; color: #ffffff; margin-top: 10px; }
+        .copy-btn {
+            background: #282828;
+            color: #b3b3b3;
+            border: 1px solid #333;
+            border-radius: 6px;
+            padding: 4px 9px;
+            margin-left: 8px;
+            cursor: pointer;
+            font-size: 0.85em;
+            transition: all 0.2s ease;
+        }
+        .copy-btn:hover { color: #1DB954; border-color: #1DB954; }
+        .copy-btn.copied { background: #1DB954; color: #000000; border-color: #1DB954; }
     </style>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://img.youtube.com">
+    <link rel="preconnect" href="https://play-lh.googleusercontent.com">
+    <link rel="preconnect" href="https://img.itch.zone">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
@@ -706,7 +759,7 @@
         <header class="header fade-in">
             <div class="profile-section">
                 <div style="text-align: center; padding: 0 20px;">
-                    <img src="Profile Pic.webp" alt="Arjun M" class="profile-image" style="width: 150px; height: 150px; border-radius: 50%; margin-top: 20px; object-fit: cover;">
+                    <img src="assets/images/profile-pic.webp" alt="Arjun M" class="profile-image" width="150" height="150" fetchpriority="high" style="width: 150px; height: 150px; border-radius: 50%; margin-top: 20px; object-fit: cover;">
                     <h1 style="color: #ffffff; margin-top: 15px; margin-bottom: 10px;">Arjun M</h1>
                     <p style="color: #b3b3b3; margin-bottom: 15px;">Unity Game Developer | Crafting Digital Experiences</p>
                     <p style="color: #b3b3b3; margin-bottom: 15px;">Kerala, India</p>
@@ -734,13 +787,13 @@
 
             <div class="about-section" style="text-align: center; position: relative;">
                 <div style="position: absolute; top: 0; right: 0;">
-                    <a href="ARJUN_M_2025_CV.pdf" download="ARJUN_M_2025_CV.pdf" class="social-link" style="background: #1DB954; color: #000000; font-weight: bold; padding: 10px 20px; border-radius: 25px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: all 0.3s ease;">
+                    <a href="ARJUN_M_2026_CV.pdf" download="ARJUN_M_2026_CV.pdf" class="social-link" style="background: #1DB954; color: #000000; font-weight: bold; padding: 10px 20px; border-radius: 25px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: all 0.3s ease;">
                         <i class="fas fa-download"></i> Download CV
                     </a>
                 </div>
                 <h2 style="color: #ffffff; font-size: 2em; margin-bottom: 20px;">About Me</h2>
                 <div style="width: 60px; height: 2px; background: #1DB954; margin: 0 auto 60px;"></div>
-                <p style="line-height: 1.8; color: #b3b3b3;">It all started with games on my dad's old laptop. What began as a childhood curiosity turned into a real passion for building digital experiences. Today, I'm a Unity developer creating original games and productivity-focused plugins — available on the Play Store and Unity Asset Store.</p>
+                <p style="line-height: 1.8; color: #b3b3b3;">It all started with games on my dad's old laptop. What began as a childhood curiosity turned into a real passion for building digital experiences. Today, I'm a Unity developer creating original games and productivity-focused plugins, available on the Play Store and Unity Asset Store.</p>
                 <p style="line-height: 1.8; color: #b3b3b3; margin-top: 20px;">My goal is to create developer-friendly assets that are practical, efficient, and easy to use. I'm always exploring new tech that pushes my creative and technical skills further. Open to freelance work, collaborations, or just connecting with fellow developers.</p>
                 <p style="line-height: 1.8; color: #1DB954; margin-top: 20px; font-weight: 600;">Let's build better, together.</p>
             </div>
@@ -752,47 +805,16 @@
                 <div style="width: 60px; height: 3px; background: #1DB954; margin: 0 auto;"></div>
             </div>
             
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="image-area">
-                        <img src="Screen-motion-card-image.webp" alt="Screen Motion : SAAS Video Maker" class="project-image">
-                    </div>
-                    <div class="project-info">
-                        <h3 class="project-title">Screen Motion : SAAS Video Maker</h3>
-                        <p class="project-description">Create cinematic 3D product motion and promotional videos in seconds. No complex timelines, After Effects, or editing experience required.</p>
-                        <a href="https://screen-motion-306825768924.us-central1.run.app/" target="_blank" class="social-link">Visit Website</a>
-                        <div style="display: flex; align-items: center; gap: 5px; margin-top: 12px;">
-                            <i class="fas fa-tag" style="font-size: 0.9em; color: #666;"></i>
-                            <span style="font-size: 0.9em; color: #666;">
-                                <span style="color: #1DB954;">Website</span>, Video Editor, Productivity
-                            </span>
-                        </div>
-                    </div>
-                </div>
+            <div class="work-tabs" role="tablist" aria-label="Work categories">
+                <button type="button" class="work-tab active" role="tab" id="tab-games" aria-controls="panel-games" aria-selected="true"><i class="fas fa-gamepad"></i> Games</button>
+                <button type="button" class="work-tab" role="tab" id="tab-apps" aria-controls="panel-apps" aria-selected="false" tabindex="-1"><i class="fas fa-globe"></i> Apps &amp; Web Apps</button>
+                <button type="button" class="work-tab" role="tab" id="tab-plugins" aria-controls="panel-plugins" aria-selected="false" tabindex="-1"><i class="fas fa-puzzle-piece"></i> Plugins &amp; Tools</button>
+            </div>
 
+            <div class="projects-grid work-panel" id="panel-games" role="tabpanel" aria-labelledby="tab-games">
                 <div class="project-card">
                     <div class="image-area">
-                        <img src="https://play-lh.googleusercontent.com/sPTS3nll0mXiW02OoF6XJ2NMaFGVjtB8FBDWKAL3eD2KgJnTNWlWop2DUhy5l1W340YBoT3avQBXbIcBBpKSXw=w240-h480-rw" alt="Calma : Breathcoach" class="project-image">
-                    </div>
-                    <div class="project-info">
-                        <h3 class="project-title">Calma : Breathcoach</h3>
-                        <p class="project-description">Guided breathing exercises and immersive nature environments to help you reset in minutes. Features over a dozen expertly crafted sessions for calming anxiety, falling asleep, sharpening focus, or stopping a panic spiral.</p>
-                        <div style="display: flex; gap: 10px; margin-top: 15px; margin-bottom: 10px;">
-                            <a href="https://play.google.com/store/apps/details?id=com.frosbytearena.calma" target="_blank" class="social-link">Play Store</a>
-                            <a href="https://frosbyte.github.io/calma-breathcoach" target="_blank" class="social-link">More</a>
-                        </div>
-                        <div style="display: flex; align-items: center; gap: 5px;">
-                            <i class="fas fa-tag" style="font-size: 0.9em; color: #666;"></i>
-                            <span style="font-size: 0.9em; color: #666;">
-                                <span style="color: #1DB954;">Mobile App</span>, Health & Fitness, Breathing, Wellness
-                            </span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="image-area">
-                        <img src="https://img.itch.zone/aW1nLzEwNjE5NzEzLnBuZw==/315x250%23c/no4oud.png" alt="Pixel Journeys" class="project-image">
+                        <img src="https://img.itch.zone/aW1nLzEwNjE5NzEzLnBuZw==/315x250%23c/no4oud.png" alt="Pixel Journeys" class="project-image" loading="lazy" decoding="async">
                         <a href="https://www.youtube.com/watch?v=Jrila9pNmQ0" target="_blank" class="yt-overlay" title="Watch on YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
                     <div class="project-info">
@@ -812,7 +834,7 @@
 
                 <div class="project-card">
                     <div class="image-area">
-                        <img src="https://img.itch.zone/aW1nLzI0ODU4ODMzLnBuZw==/347x500/ojNyLS.png" alt="BloodMoon Hollow" class="project-image">
+                        <img src="https://img.itch.zone/aW1nLzI0ODU4ODMzLnBuZw==/347x500/ojNyLS.png" alt="BloodMoon Hollow" class="project-image" loading="lazy" decoding="async">
                         <!-- No invisible button or video preview for BloodMoon Hollow -->
                     </div>
                     <div class="project-info">
@@ -830,25 +852,7 @@
 
                 <div class="project-card">
                     <div class="image-area">
-                        <img src="PixelArtGen-card-image.webp" alt="PixelArtGen" class="project-image">
-                        <!-- No invisible button or video preview for PixelArtGen -->
-                    </div>
-                    <div class="project-info">
-                        <h3 class="project-title">PixelArtGen</h3>
-                        <p class="project-description">Transform your creative ideas into stunning pixel art and animated sprite sheets. Perfect for game developers, digital artists, and creators who want to bring their characters to life with professional-quality pixel graphics.</p>
-                        <a href="https://pixelartgen.com" target="_blank" class="social-link">Visit Website</a>
-                        <div style="display: flex; align-items: center; gap: 5px; margin-top: 12px;">
-                            <i class="fas fa-tag" style="font-size: 0.9em; color: #666;"></i>
-                            <span style="font-size: 0.9em; color: #666;">
-                                <span style="color: #1DB954;">Web App</span>, AI, Next.js, Supabase, Game Asset Creator
-                            </span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="image-area">
-                        <img src="https://img.itch.zone/aW1nLzkyNzIyNTcucG5n/347x500/L70o3D.png" alt="Spacefire" class="project-image">
+                        <img src="https://img.itch.zone/aW1nLzkyNzIyNTcucG5n/347x500/L70o3D.png" alt="Spacefire" class="project-image" loading="lazy" decoding="async">
                         <!-- No invisible button or video preview for Spacefire -->
                     </div>
                     <div class="project-info">
@@ -866,46 +870,7 @@
 
                 <div class="project-card">
                     <div class="image-area">
-                        <img src="Polishr-card-image.webp" alt="Polishr" class="project-image">
-                        <a href="https://www.youtube.com/watch?v=74I171-WP2M" target="_blank" class="yt-overlay" title="Watch on YouTube"><i class="fab fa-youtube"></i></a>
-                    </div>
-                    <div class="project-info">
-                        <h3 class="project-title">Polishr : Your One Click Fixer</h3>
-                        <p class="project-description">A Chrome extension that lets you instantly fix grammar, optimize prompts, and shorten text for AI chatbots with a single click. No more switching tabs or opening separate windows just to refine a prompt — click, improve, and send.</p>
-                        <div style="display: flex; gap: 10px; margin-top: 15px; margin-bottom: 10px;">
-                            <a href="https://chromewebstore.google.com/detail/lnmjaajckjejhgghjjibpgcidkomihja" target="_blank" class="social-link">Chrome Web Store</a>
-                        </div>
-                        <div style="display: flex; align-items: center; gap: 5px;">
-                            <i class="fas fa-tag" style="font-size: 0.9em; color: #666;"></i>
-                            <span style="font-size: 0.9em; color: #666;">
-                                <span style="color: #1DB954;">Chrome Extension</span>, Productivity, AI, Grammar
-                            </span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="image-area">
-                        <img src="https://lh3.googleusercontent.com/HCR8_UUMNiGwN-2clsteBBy4f6URdTXLoWhaPID8DqZIV1aHbxlDuNUBc0_oMNhNvpsWHpksXl7mV3JQ29k9swz5Yw=s1280-w1280-h800" alt="Focus Feline" class="project-image">
-                    </div>
-                    <div class="project-info">
-                        <h3 class="project-title">Focus Feline</h3>
-                        <p class="project-description">A cute cat companion to keep you on track. It detects mouse inactivity and pops up an adorable cat to gently bring you back from distractions whenever you lose focus.</p>
-                        <div style="display: flex; gap: 10px; margin-top: 15px; margin-bottom: 10px;">
-                            <a href="https://chromewebstore.google.com/detail/acdablmljedfmfjhjchemjigakekepfh?authuser=0&hl=en" target="_blank" class="social-link">Chrome Web Store</a>
-                        </div>
-                        <div style="display: flex; align-items: center; gap: 5px;">
-                            <i class="fas fa-tag" style="font-size: 0.9em; color: #666;"></i>
-                            <span style="font-size: 0.9em; color: #666;">
-                                <span style="color: #1DB954;">Productivity</span>, Focus, Chrome Extension
-                            </span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="image-area">
-                        <img src="https://play-lh.googleusercontent.com/pb_MtqXhteM0_BUO9BSlKmmSDe6II1O4VTzA1j_vgMWAiS6qBXgduEdUX04YTYmCpic=w480-h960-rw" alt="Twisty Turns" class="project-image">
+                        <img src="https://play-lh.googleusercontent.com/pb_MtqXhteM0_BUO9BSlKmmSDe6II1O4VTzA1j_vgMWAiS6qBXgduEdUX04YTYmCpic=w480-h960-rw" alt="Twisty Turns" class="project-image" loading="lazy" decoding="async">
                         <a href="https://www.youtube.com/watch?v=SNsxg98SYSM" target="_blank" class="yt-overlay" title="Watch on YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
                     <div class="project-info">
@@ -925,67 +890,7 @@
 
                 <div class="project-card">
                     <div class="image-area">
-                        <img src="https://img.youtube.com/vi/Qp7yAgmcUZQ/maxresdefault.jpg" alt="Project Pilot" class="project-image">
-                        <a href="https://www.youtube.com/watch?v=Qp7yAgmcUZQ" target="_blank" class="yt-overlay" title="Watch on YouTube"><i class="fab fa-youtube"></i></a>
-                    </div>
-                    <div class="project-info">
-                        <h3 class="project-title">Project Pilot</h3>
-                        <p class="project-description">Project Pilot is a simple, all-in-one tool to analyze and manage assets in your Unity project. Quickly find duplicate assets, unused files, and large assets that are taking up space. With smart filters and a clean interface, you'll get a clear view of your project — so you can clean up, optimize, and stay organized with ease.</p>
-                        <div style="display: flex; gap: 10px; margin-top: 15px; margin-bottom: 10px;">
-                            <a href="https://assetstore.unity.com/packages/slug/322423" target="_blank" class="social-link">View on Unity Asset Store</a>
-                        </div>
-                        <div style="display: flex; align-items: center; gap: 5px;">
-                            <i class="fas fa-tag" style="font-size: 0.9em; color: #666;"></i>
-                            <span style="font-size: 0.9em; color: #666;">
-                                <span style="color: #1DB954;">Unity Asset</span>, Project Management, Optimization
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="image-area">
-                        <img src="https://img.youtube.com/vi/Vo_72H1qFtE/maxresdefault.jpg" alt="Inspectify" class="project-image">
-                        <a href="https://www.youtube.com/watch?v=Vo_72H1qFtE" target="_blank" class="yt-overlay" title="Watch on YouTube"><i class="fab fa-youtube"></i></a>
-                    </div>
-                    <div class="project-info">
-                        <h3 class="project-title">Inspectify</h3>
-                        <p class="project-description">A Unity editor tool which helps you work faster by customizing views, filters, and tools to see only what matters. Enhance your development workflow and focus on what's important for your project.</p>
-                        <div style="display: flex; gap: 10px; margin-top: 15px; margin-bottom: 10px;">
-                            <a href="https://assetstore.unity.com/packages/tools/utilities/inspectify-custom-inspector-319859" target="_blank" class="social-link">View on Unity Asset Store</a>
-                        </div>
-                        <div style="display: flex; align-items: center; gap: 5px;">
-                            <i class="fas fa-tag" style="font-size: 0.9em; color: #666;"></i>
-                            <span style="font-size: 0.9em; color: #666;">
-                                <span style="color: #1DB954;">Unity Asset</span>, Editor Extension, Productivity
-                            </span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="image-area">
-                        <img src="https://img.youtube.com/vi/XhCk9tk8o5U/maxresdefault.jpg" alt="Scene Flow" class="project-image">
-                        <a href="https://www.youtube.com/watch?v=XhCk9tk8o5U" target="_blank" class="yt-overlay" title="Watch on YouTube"><i class="fab fa-youtube"></i></a>
-                    </div>
-                    <div class="project-info">
-                        <h3 class="project-title">Scene Flow</h3>
-                        <p class="project-description">A Unity Editor toolbar dropdown for one-click scene switching—no more menu or Project window digging. Streamlines workflow for developers by providing quick access to all scenes in your project.</p>
-                        <div style="display: flex; gap: 10px; margin-top: 15px; margin-bottom: 10px;">
-                            <a href="https://assetstore.unity.com/packages/tools/utilities/sceneflow-build-switch-toolkit-317178" target="_blank" class="social-link">View on Unity Asset Store</a>
-                        </div>
-                        <div style="display: flex; align-items: center; gap: 5px;">
-                            <i class="fas fa-tag" style="font-size: 0.9em; color: #666;"></i>
-                            <span style="font-size: 0.9em; color: #666;">
-                                <span style="color: #1DB954;">Unity Asset</span>, Editor Tool, Productivity
-                            </span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="image-area">
-                        <img src="https://play-lh.googleusercontent.com/vGchBz-huvpphj-OQ2K82-goWo43SDu0hl24gvOyIdDepScZTiv9pZ-FSAowhZRH2A=w480-h960-rw" alt="Dash Loop" class="project-image">
+                        <img src="https://play-lh.googleusercontent.com/vGchBz-huvpphj-OQ2K82-goWo43SDu0hl24gvOyIdDepScZTiv9pZ-FSAowhZRH2A=w480-h960-rw" alt="Dash Loop" class="project-image" loading="lazy" decoding="async">
                         <a href="https://www.youtube.com/watch?v=pyeJcws9vCQ" target="_blank" class="yt-overlay" title="Watch on YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
                     <div class="project-info">
@@ -1005,7 +910,7 @@
 
                 <div class="project-card">
                     <div class="image-area">
-                        <img src="https://play-lh.googleusercontent.com/RKRMCwP6dz3b-Iddy9zXsSgiRCtkeQqMTEBQYE68BUEKez5mLfN4cZopo9oTg-q8gLI=w480-h960-rw" alt="Orb Rush" class="project-image">
+                        <img src="https://play-lh.googleusercontent.com/RKRMCwP6dz3b-Iddy9zXsSgiRCtkeQqMTEBQYE68BUEKez5mLfN4cZopo9oTg-q8gLI=w480-h960-rw" alt="Orb Rush" class="project-image" loading="lazy" decoding="async">
                         <a href="https://www.youtube.com/watch?v=GiPP9_D89Jk" target="_blank" class="yt-overlay" title="Watch on YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
                     <div class="project-info">
@@ -1025,7 +930,7 @@
 
                 <div class="project-card">
                     <div class="image-area">
-                        <img src="https://img.itch.zone/aW1nLzEwMDc1NzA4LnBuZw==/315x250%23c/9t22kk.png" alt="Neon Rider" class="project-image">
+                        <img src="https://img.itch.zone/aW1nLzEwMDc1NzA4LnBuZw==/315x250%23c/9t22kk.png" alt="Neon Rider" class="project-image" loading="lazy" decoding="async">
                         <a href="https://www.youtube.com/watch?v=FFYzf0cGOyQ" target="_blank" class="yt-overlay" title="Watch on YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
                     <div class="project-info">
@@ -1045,7 +950,7 @@
 
                 <div class="project-card">
                     <div class="image-area">
-                        <img src="https://img.itch.zone/aW1nLzEwMTM5MjI5LmpwZw==/original/8WRYN%2F.jpg" alt="Two Brothers" class="project-image">
+                        <img src="https://img.itch.zone/aW1nLzEwMTM5MjI5LmpwZw==/original/8WRYN%2F.jpg" alt="Two Brothers" class="project-image" loading="lazy" decoding="async">
                         <!-- No invisible button or video preview for Two Brothers -->
                     </div>
                     <div class="project-info">
@@ -1060,7 +965,164 @@
                         </div>
                     </div>
                 </div>
+            </div>
 
+            <div class="projects-grid work-panel" id="panel-apps" role="tabpanel" aria-labelledby="tab-apps" hidden>
+                <div class="project-card">
+                    <div class="image-area">
+                        <img src="https://play-lh.googleusercontent.com/sPTS3nll0mXiW02OoF6XJ2NMaFGVjtB8FBDWKAL3eD2KgJnTNWlWop2DUhy5l1W340YBoT3avQBXbIcBBpKSXw=w240-h480-rw" alt="Calma : Breathcoach" class="project-image" loading="lazy" decoding="async">
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Calma : Breathcoach</h3>
+                        <p class="project-description">Guided breathing exercises and immersive nature environments to help you reset in minutes. Features over a dozen expertly crafted sessions for calming anxiety, falling asleep, sharpening focus, or stopping a panic spiral.</p>
+                        <div style="display: flex; gap: 10px; margin-top: 15px; margin-bottom: 10px;">
+                            <a href="https://calmabreathcoach.frosbytedev.com/" target="_blank" class="social-link">Visit Website</a>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 5px;">
+                            <i class="fas fa-tag" style="font-size: 0.9em; color: #666;"></i>
+                            <span style="font-size: 0.9em; color: #666;">
+                                <span style="color: #1DB954;">Mobile App</span>, Health & Fitness, Breathing, Wellness
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="image-area">
+                        <img src="assets/images/Screen-motion-card-image.webp" alt="Screen Motion : SAAS Video Maker" class="project-image" loading="lazy" decoding="async">
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Screen Motion : SAAS Video Maker</h3>
+                        <p class="project-description">Create cinematic 3D product motion and promotional videos in seconds. No complex timelines, After Effects, or editing experience required.</p>
+                        <a href="https://screenmotion.frosbytedev.com" target="_blank" class="social-link">Visit Website</a>
+                        <div style="display: flex; align-items: center; gap: 5px; margin-top: 12px;">
+                            <i class="fas fa-tag" style="font-size: 0.9em; color: #666;"></i>
+                            <span style="font-size: 0.9em; color: #666;">
+                                <span style="color: #1DB954;">Website</span>, Video Editor, Productivity
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="image-area">
+                        <img src="assets/images/PixelArtGen-card-image.webp" alt="PixelArtGen" class="project-image" loading="lazy" decoding="async">
+                        <!-- No invisible button or video preview for PixelArtGen -->
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">PixelArtGen</h3>
+                        <p class="project-description">Transform your creative ideas into stunning pixel art and animated sprite sheets. Perfect for game developers, digital artists, and creators who want to bring their characters to life with professional-quality pixel graphics.</p>
+                        <a href="https://pixelartgen.com" target="_blank" class="social-link">Visit Website</a>
+                        <div style="display: flex; align-items: center; gap: 5px; margin-top: 12px;">
+                            <i class="fas fa-tag" style="font-size: 0.9em; color: #666;"></i>
+                            <span style="font-size: 0.9em; color: #666;">
+                                <span style="color: #1DB954;">Web App</span>, AI, Next.js, Supabase, Game Asset Creator
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="projects-grid work-panel" id="panel-plugins" role="tabpanel" aria-labelledby="tab-plugins" hidden>
+                <div class="project-card">
+                    <div class="image-area">
+                        <img src="assets/images/Polishr-card-image.webp" alt="Polishr" class="project-image" loading="lazy" decoding="async">
+                        <a href="https://www.youtube.com/watch?v=74I171-WP2M" target="_blank" class="yt-overlay" title="Watch on YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Polishr : Your One Click Fixer</h3>
+                        <p class="project-description">A Chrome extension that lets you instantly fix grammar, optimize prompts, and shorten text for AI chatbots with a single click. No more switching tabs or opening separate windows just to refine a prompt. Click, improve, and send.</p>
+                        <div style="display: flex; gap: 10px; margin-top: 15px; margin-bottom: 10px;">
+                            <a href="https://chromewebstore.google.com/detail/lnmjaajckjejhgghjjibpgcidkomihja" target="_blank" class="social-link">Chrome Web Store</a>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 5px;">
+                            <i class="fas fa-tag" style="font-size: 0.9em; color: #666;"></i>
+                            <span style="font-size: 0.9em; color: #666;">
+                                <span style="color: #1DB954;">Chrome Extension</span>, Productivity, AI, Grammar
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="image-area">
+                        <img src="https://lh3.googleusercontent.com/HCR8_UUMNiGwN-2clsteBBy4f6URdTXLoWhaPID8DqZIV1aHbxlDuNUBc0_oMNhNvpsWHpksXl7mV3JQ29k9swz5Yw=s1280-w1280-h800" alt="Focus Feline" class="project-image" loading="lazy" decoding="async">
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Focus Feline</h3>
+                        <p class="project-description">A cute cat companion to keep you on track. It detects mouse inactivity and pops up an adorable cat to gently bring you back from distractions whenever you lose focus.</p>
+                        <div style="display: flex; gap: 10px; margin-top: 15px; margin-bottom: 10px;">
+                            <a href="https://chromewebstore.google.com/detail/acdablmljedfmfjhjchemjigakekepfh?authuser=0&hl=en" target="_blank" class="social-link">Chrome Web Store</a>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 5px;">
+                            <i class="fas fa-tag" style="font-size: 0.9em; color: #666;"></i>
+                            <span style="font-size: 0.9em; color: #666;">
+                                <span style="color: #1DB954;">Productivity</span>, Focus, Chrome Extension
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="image-area">
+                        <img src="https://img.youtube.com/vi/Qp7yAgmcUZQ/maxresdefault.jpg" alt="Project Pilot" class="project-image" loading="lazy" decoding="async">
+                        <a href="https://www.youtube.com/watch?v=Qp7yAgmcUZQ" target="_blank" class="yt-overlay" title="Watch on YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Project Pilot</h3>
+                        <p class="project-description">Project Pilot is a simple, all-in-one tool to analyze and manage assets in your Unity project. Quickly find duplicate assets, unused files, and large assets that are taking up space. With smart filters and a clean interface, you'll get a clear view of your project, so you can clean up, optimize, and stay organized with ease.</p>
+                        <div style="display: flex; gap: 10px; margin-top: 15px; margin-bottom: 10px;">
+                            <a href="https://assetstore.unity.com/packages/slug/322423" target="_blank" class="social-link">View on Unity Asset Store</a>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 5px;">
+                            <i class="fas fa-tag" style="font-size: 0.9em; color: #666;"></i>
+                            <span style="font-size: 0.9em; color: #666;">
+                                <span style="color: #1DB954;">Unity Asset</span>, Project Management, Optimization
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                
+
+                <div class="project-card">
+                    <div class="image-area">
+                        <img src="https://img.youtube.com/vi/Vo_72H1qFtE/maxresdefault.jpg" alt="Inspectify" class="project-image" loading="lazy" decoding="async">
+                        <a href="https://www.youtube.com/watch?v=Vo_72H1qFtE" target="_blank" class="yt-overlay" title="Watch on YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Inspectify</h3>
+                        <p class="project-description">A Unity editor tool which helps you work faster by customizing views, filters, and tools to see only what matters. Enhance your development workflow and focus on what's important for your project.</p>
+                        <div style="display: flex; gap: 10px; margin-top: 15px; margin-bottom: 10px;">
+                            <a href="https://assetstore.unity.com/packages/tools/utilities/inspectify-custom-inspector-319859" target="_blank" class="social-link">View on Unity Asset Store</a>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 5px;">
+                            <i class="fas fa-tag" style="font-size: 0.9em; color: #666;"></i>
+                            <span style="font-size: 0.9em; color: #666;">
+                                <span style="color: #1DB954;">Unity Asset</span>, Editor Extension, Productivity
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="image-area">
+                        <img src="https://img.youtube.com/vi/XhCk9tk8o5U/maxresdefault.jpg" alt="Scene Flow" class="project-image" loading="lazy" decoding="async">
+                        <a href="https://www.youtube.com/watch?v=XhCk9tk8o5U" target="_blank" class="yt-overlay" title="Watch on YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Scene Flow</h3>
+                        <p class="project-description">A Unity Editor toolbar dropdown for one-click scene switching, with no more menu or Project window digging. Streamlines workflow for developers by providing quick access to all scenes in your project.</p>
+                        <div style="display: flex; gap: 10px; margin-top: 15px; margin-bottom: 10px;">
+                            <a href="https://assetstore.unity.com/packages/tools/utilities/sceneflow-build-switch-toolkit-317178" target="_blank" class="social-link">View on Unity Asset Store</a>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 5px;">
+                            <i class="fas fa-tag" style="font-size: 0.9em; color: #666;"></i>
+                            <span style="font-size: 0.9em; color: #666;">
+                                <span style="color: #1DB954;">Unity Asset</span>, Editor Tool, Productivity
+                            </span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -1073,7 +1135,7 @@
             <div class="projects-grid sdk-demos-grid" style="max-width: 1200px; margin: 0 auto;">
                 <div class="project-card">
                     <div class="image-area">
-                        <img src="https://img.youtube.com/vi/BIx_hACjcYY/maxresdefault.jpg" alt="Photon Fusion Demo" class="project-image">
+                        <img src="https://img.youtube.com/vi/BIx_hACjcYY/maxresdefault.jpg" alt="Photon Fusion Demo" class="project-image" loading="lazy" decoding="async">
                         <a href="https://www.youtube.com/watch?v=BIx_hACjcYY" target="_blank" class="yt-overlay" title="Watch on YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
                     <div class="project-info">
@@ -1094,7 +1156,7 @@
 
                 <div class="project-card">
                     <div class="image-area">
-                        <img src="https://img.youtube.com/vi/WSIl1Pm6BW0/maxresdefault.jpg" alt="Firebase Demo" class="project-image">
+                        <img src="https://img.youtube.com/vi/WSIl1Pm6BW0/maxresdefault.jpg" alt="Firebase Demo" class="project-image" loading="lazy" decoding="async">
                         <a href="https://www.youtube.com/watch?v=WSIl1Pm6BW0" target="_blank" class="yt-overlay" title="Watch on YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
                     <div class="project-info">
@@ -1115,7 +1177,7 @@
 
                 <div class="project-card">
                     <div class="image-area">
-                        <img src="https://img.youtube.com/vi/Ndi0fHc8OWg/maxresdefault.jpg" alt="ElevenLabs Demo" class="project-image">
+                        <img src="https://img.youtube.com/vi/Ndi0fHc8OWg/maxresdefault.jpg" alt="ElevenLabs Demo" class="project-image" loading="lazy" decoding="async">
                         <a href="https://www.youtube.com/watch?v=Ndi0fHc8OWg" target="_blank" class="yt-overlay" title="Watch on YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
                     <div class="project-info">
@@ -1136,7 +1198,7 @@
 
                 <div class="project-card">
                     <div class="image-area">
-                        <img src="https://img.itch.zone/aW1nLzIzNjY1NzAyLnBuZw==/347x500/%2BNVRZN.png" alt="Learn AR" class="project-image">
+                        <img src="https://img.itch.zone/aW1nLzIzNjY1NzAyLnBuZw==/347x500/%2BNVRZN.png" alt="Learn AR" class="project-image" loading="lazy" decoding="async">
                         <!-- No invisible button or video preview for Learn AR -->
                     </div>
                     <div class="project-info">
@@ -1206,8 +1268,10 @@
         </div>
 
         <div class="contact-button-section fade-in" style="margin: 100px auto 60px; max-width: 1400px; padding: 0 20px; text-align: center;">
-            <p style="font-size: 1.1em; color: #ffffff;">Contact Personal: <a href="mailto:arjunmanoj23@gmail.com" style="color: #1DB954; text-decoration: none; font-weight: bold;">arjunmanoj23@gmail.com</a></p>
-            <p style="font-size: 1.1em; color: #ffffff; margin-top: 10px;">Contact Support: <a href="mailto:frosbytearena.customerhelp@gmail.com" style="color: #1DB954; text-decoration: none; font-weight: bold;">frosbytearena.customerhelp@gmail.com</a></p>
+            <p class="contact-line">Contact Personal: <a href="mailto:arjunmanoj23@gmail.com" style="color: #1DB954; text-decoration: none; font-weight: bold;">arjunmanoj23@gmail.com</a>
+                <button type="button" class="copy-btn" data-copy="arjunmanoj23@gmail.com" aria-label="Copy personal email" title="Copy email"><i class="far fa-copy"></i></button></p>
+            <p class="contact-line">Contact Support: <a href="mailto:frosbytearena.customerhelp@gmail.com" style="color: #1DB954; text-decoration: none; font-weight: bold;">frosbytearena.customerhelp@gmail.com</a>
+                <button type="button" class="copy-btn" data-copy="frosbytearena.customerhelp@gmail.com" aria-label="Copy support email" title="Copy email"><i class="far fa-copy"></i></button></p>
         </div>
 
         <footer class="footer" style="text-align: center; padding: 40px 0; color: #b3b3b3;">
@@ -1241,7 +1305,52 @@
     </div>
 
     <script>
-      
+        (function () {
+            const tabs = Array.from(document.querySelectorAll('.work-tab'));
+            function activate(tab, focus) {
+                tabs.forEach(t => {
+                    const on = t === tab;
+                    t.classList.toggle('active', on);
+                    t.setAttribute('aria-selected', on);
+                    t.tabIndex = on ? 0 : -1;
+                    document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
+                });
+                if (focus) tab.focus();
+            }
+            tabs.forEach((tab, i) => {
+                tab.addEventListener('click', () => activate(tab));
+                tab.addEventListener('keydown', e => {
+                    if (e.key === 'ArrowRight') activate(tabs[(i + 1) % tabs.length], true);
+                    if (e.key === 'ArrowLeft') activate(tabs[(i - 1 + tabs.length) % tabs.length], true);
+                });
+            });
+        })();
+
+        document.querySelectorAll('.copy-btn').forEach(btn => {
+            btn.addEventListener('click', async () => {
+                const text = btn.dataset.copy;
+                try {
+                    await navigator.clipboard.writeText(text);
+                } catch (err) {
+                    const ta = document.createElement('textarea');
+                    ta.value = text;
+                    ta.style.position = 'fixed';
+                    ta.style.opacity = '0';
+                    document.body.appendChild(ta);
+                    ta.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(ta);
+                }
+                const icon = btn.querySelector('i');
+                btn.classList.add('copied');
+                icon.className = 'fas fa-check';
+                setTimeout(() => {
+                    btn.classList.remove('copied');
+                    icon.className = 'far fa-copy';
+                }, 1500);
+            });
+        });
+
         document.querySelectorAll('.nav-link').forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
