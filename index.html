@@ -660,6 +660,76 @@
             }
         }
 
+        /* Mobile: 3 project cards per row */
+        @media (max-width: 768px) {
+            .projects-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 8px;
+                padding: 8px 0;
+            }
+
+            .project-card:hover {
+                transform: none;
+            }
+
+            .image-area {
+                height: auto;
+                aspect-ratio: 1 / 1;
+                margin-bottom: 4px;
+            }
+
+            .yt-overlay {
+                width: 24px;
+                height: 18px;
+                bottom: 4px;
+                right: 4px;
+                font-size: 0.7em;
+                border-radius: 4px;
+            }
+
+            .project-info {
+                padding: 4px 5px 8px;
+                font-size: 0.8em;
+            }
+
+            .project-info h3,
+            .project-title {
+                font-size: 0.75em;
+                margin-bottom: 4px;
+                line-height: 1.25;
+            }
+
+            .project-info p,
+            .project-description {
+                font-size: 0.62em;
+                line-height: 1.35;
+                margin-bottom: 6px;
+                display: -webkit-box;
+                -webkit-line-clamp: 4;
+                line-clamp: 4;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+
+            .social-link {
+                padding: 4px 8px;
+                font-size: 0.65em;
+                margin: 0;
+            }
+
+            .project-info > div {
+                margin-top: 6px !important;
+                margin-bottom: 4px !important;
+                gap: 4px !important;
+                flex-wrap: wrap;
+            }
+
+            .project-info > div span,
+            .project-info > div i {
+                font-size: 0.58rem !important;
+            }
+        }
+
         /* Fix video modal for mobile */
         @media (max-width: 768px) {
             .video-modal .modal-content {
@@ -698,7 +768,7 @@
 
         @media (max-width: 768px) {
             .sdk-demos-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(3, minmax(0, 1fr));
             }
         }
 
@@ -795,7 +865,7 @@
                 <div style="width: 60px; height: 2px; background: #1DB954; margin: 0 auto 60px;"></div>
                 <p style="line-height: 1.8; color: #b3b3b3;">It all started with games on my dad's old laptop. What began as a childhood curiosity turned into a real passion for building digital experiences. Today, I'm a Unity developer creating original games and productivity-focused plugins, available on the Play Store and Unity Asset Store.</p>
                 <p style="line-height: 1.8; color: #b3b3b3; margin-top: 20px;">My goal is to create developer-friendly assets that are practical, efficient, and easy to use. I'm always exploring new tech that pushes my creative and technical skills further. Open to freelance work, collaborations, or just connecting with fellow developers.</p>
-                <p style="line-height: 1.8; color: #1DB954; margin-top: 20px; font-weight: 600;">Let's build better, together.</p>
+                <p style="line-height: 1.8; color: #1DB954; margin-top: 20px; font-weight: 600;">Let's build better, together</p>
             </div>
         </header>
 
@@ -814,6 +884,23 @@
             <div class="projects-grid work-panel" id="panel-games" role="tabpanel" aria-labelledby="tab-games">
                 <div class="project-card">
                     <div class="image-area">
+                        <img src="https://img.itch.zone/aW1nLzMyNjg1NDQxLnBuZw==/315x250%23c/JTc8w0.png" alt="Sort That Store" class="project-image" loading="lazy" decoding="async">
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Sort That Store</h3>
+                        <p class="project-description">A timed 3D supermarket simulation. Throw loose items onto the matching shelves before the clock runs out, then spend your earnings on upgrades at the arcade machine. Supports keyboard, mouse and gamepad.</p>
+                        <a href="https://frosbyte.itch.io/sort-that-store" target="_blank" class="social-link">Play Game</a>
+                        <div style="display: flex; align-items: center; gap: 5px; margin-top: 12px;">
+                            <i class="fas fa-tag" style="font-size: 0.9em; color: #666;"></i>
+                            <span style="font-size: 0.9em; color: #666;">
+                                <span style="color: #1DB954;">Browser Game</span>, 3D, Simulation, In Development
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="image-area">
                         <img src="https://img.itch.zone/aW1nLzEwNjE5NzEzLnBuZw==/315x250%23c/no4oud.png" alt="Pixel Journeys" class="project-image" loading="lazy" decoding="async">
                         <a href="https://www.youtube.com/watch?v=Jrila9pNmQ0" target="_blank" class="yt-overlay" title="Watch on YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
@@ -827,6 +914,41 @@
                             <i class="fas fa-tag" style="font-size: 0.9em; color: #666;"></i>
                             <span style="font-size: 0.9em; color: #666;">
                                 <span style="color: #1DB954;">Browser Game</span>, 2D, Side Scroller, Adventure
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="image-area">
+                        <img src="https://img.itch.zone/aW1nLzkyNzIyNTcucG5n/347x500/L70o3D.png" alt="Spacefire" class="project-image" loading="lazy" decoding="async">
+                        <!-- No invisible button or video preview for Spacefire -->
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Spacefire</h3>
+                        <p class="project-description">A top-down action game where aliens invade Earth and our hero goes to space to destroy the main alien ship. Use spaceship fire to destroy the enemies and save the earth. Features simple controls with A/D for rotation and Space/Left Click for boost.</p>
+                        <a href="https://knightmare-gamesin.itch.io/spacefire" target="_blank" class="social-link">Play Game</a>
+                        <div style="display: flex; align-items: center; gap: 5px; margin-top: 12px;">
+                            <i class="fas fa-tag" style="font-size: 0.9em; color: #666;"></i>
+                            <span style="font-size: 0.9em; color: #666;">
+                                <span style="color: #1DB954;">Windows</span>, Action, Top-down
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="image-area">
+                        <img src="https://img.itch.zone/aW1nLzMyNzAxMzM1LnBuZw==/347x500/P3SI3U.png" alt="Zag Zig" class="project-image" loading="lazy" decoding="async">
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Zag Zig</h3>
+                        <p class="project-description">A casual one-tap puzzle game. Tap to switch the ball's direction and zigzag along a road that crumbles away behind you. Every switch scores a point and every coin adds two, so keep moving!</p>
+                        <a href="https://frosbyte.itch.io/zag-zig" target="_blank" class="social-link">Play Game</a>
+                        <div style="display: flex; align-items: center; gap: 5px; margin-top: 12px;">
+                            <i class="fas fa-tag" style="font-size: 0.9em; color: #666;"></i>
+                            <span style="font-size: 0.9em; color: #666;">
+                                <span style="color: #1DB954;">Browser Game</span>, <span style="color: #1DB954;">Android</span>, 2D, Casual, Puzzle
                             </span>
                         </div>
                     </div>
@@ -852,17 +974,17 @@
 
                 <div class="project-card">
                     <div class="image-area">
-                        <img src="https://img.itch.zone/aW1nLzkyNzIyNTcucG5n/347x500/L70o3D.png" alt="Spacefire" class="project-image" loading="lazy" decoding="async">
-                        <!-- No invisible button or video preview for Spacefire -->
+                        <img src="https://img.itch.zone/aW1nLzEwMTM5MjI5LmpwZw==/original/8WRYN%2F.jpg" alt="Two Brothers" class="project-image" loading="lazy" decoding="async">
+                        <!-- No invisible button or video preview for Two Brothers -->
                     </div>
                     <div class="project-info">
-                        <h3 class="project-title">Spacefire</h3>
-                        <p class="project-description">A top-down action game where aliens invade Earth and our hero goes to space to destroy the main alien ship. Use spaceship fire to destroy the enemies and save the earth. Features simple controls with A/D for rotation and Space/Left Click for boost.</p>
-                        <a href="https://knightmare-gamesin.itch.io/spacefire" target="_blank" class="social-link">Play Game</a>
+                        <h3 class="project-title">Two Brothers</h3>
+                        <p class="project-description">Two Brothers is a 2D platformer in which two players are under your control and must work together to solve a task. While Big Brother is tall and can jump higher, Little Brother is smaller and moves more quickly.</p>
+                        <a href="https://knightmare-gamesin.itch.io/thomas-was-alone" target="_blank" class="social-link">Play Game</a>
                         <div style="display: flex; align-items: center; gap: 5px; margin-top: 12px;">
                             <i class="fas fa-tag" style="font-size: 0.9em; color: #666;"></i>
                             <span style="font-size: 0.9em; color: #666;">
-                                <span style="color: #1DB954;">Windows</span>, Action, Top-down
+                                <span style="color: #1DB954;">Windows</span>, 2D, Platformer, Co-op
                             </span>
                         </div>
                     </div>
@@ -943,24 +1065,6 @@
                             <i class="fas fa-tag" style="font-size: 0.9em; color: #666;"></i>
                             <span style="font-size: 0.9em; color: #666;">
                                 <span style="color: #1DB954;">Browser Game</span>, 2D, Racing, Arcade
-                            </span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="image-area">
-                        <img src="https://img.itch.zone/aW1nLzEwMTM5MjI5LmpwZw==/original/8WRYN%2F.jpg" alt="Two Brothers" class="project-image" loading="lazy" decoding="async">
-                        <!-- No invisible button or video preview for Two Brothers -->
-                    </div>
-                    <div class="project-info">
-                        <h3 class="project-title">Two Brothers</h3>
-                        <p class="project-description">Two Brothers is a 2D platformer in which two players are under your control and must work together to solve a task. While Big Brother is tall and can jump higher, Little Brother is smaller and moves more quickly.</p>
-                        <a href="https://knightmare-gamesin.itch.io/thomas-was-alone" target="_blank" class="social-link">Play Game</a>
-                        <div style="display: flex; align-items: center; gap: 5px; margin-top: 12px;">
-                            <i class="fas fa-tag" style="font-size: 0.9em; color: #666;"></i>
-                            <span style="font-size: 0.9em; color: #666;">
-                                <span style="color: #1DB954;">Windows</span>, 2D, Platformer, Co-op
                             </span>
                         </div>
                     </div>
@@ -1234,11 +1338,20 @@
                     <!-- Development Tools -->
                     <span style="background: #282828; color: #b3b3b3; padding: 8px 15px; border-radius: 20px; font-size: 0.9em;">Visual Studio</span>
                     <span style="background: #282828; color: #b3b3b3; padding: 8px 15px; border-radius: 20px; font-size: 0.9em;">Cursor</span>
+                    <span style="background: #282828; color: #b3b3b3; padding: 8px 15px; border-radius: 20px; font-size: 0.9em;">Claude Code</span>
+                    <span style="background: #282828; color: #b3b3b3; padding: 8px 15px; border-radius: 20px; font-size: 0.9em;">Git</span>
+                    <span style="background: #282828; color: #b3b3b3; padding: 8px 15px; border-radius: 20px; font-size: 0.9em;">GitHub</span>
+                    <span style="background: #282828; color: #b3b3b3; padding: 8px 15px; border-radius: 20px; font-size: 0.9em;">Bitbucket</span>
+                    <span style="background: #282828; color: #b3b3b3; padding: 8px 15px; border-radius: 20px; font-size: 0.9em;">Asana</span>
+                    <span style="background: #282828; color: #b3b3b3; padding: 8px 15px; border-radius: 20px; font-size: 0.9em;">Trello</span>
                     
                     <!-- Core Skills -->
                     <span style="background: #282828; color: #b3b3b3; padding: 8px 15px; border-radius: 20px; font-size: 0.9em;">Unity</span> 
                     <span style="background: #282828; color: #b3b3b3; padding: 8px 15px; border-radius: 20px; font-size: 0.9em;">Game Programming</span>
-                    <span style="background: #282828; color: #b3b3b3; padding: 8px 15px; border-radius: 20px; font-size: 0.9em;">DotTween</span>
+                    <span style="background: #282828; color: #b3b3b3; padding: 8px 15px; border-radius: 20px; font-size: 0.9em;">DOTween for Unity</span>
+                    <span style="background: #282828; color: #b3b3b3; padding: 8px 15px; border-radius: 20px; font-size: 0.9em;">Cinemachine</span>
+                    <span style="background: #282828; color: #b3b3b3; padding: 8px 15px; border-radius: 20px; font-size: 0.9em;">WebGL</span>
+                    <span style="background: #282828; color: #b3b3b3; padding: 8px 15px; border-radius: 20px; font-size: 0.9em;">Cross-platform Development</span>
                     
                     <!-- Mobile & XR -->
                     <span style="background: #282828; color: #b3b3b3; padding: 8px 15px; border-radius: 20px; font-size: 0.9em;">iOS Development</span>
@@ -1263,6 +1376,7 @@
                     
                     <!-- Cloud Platforms -->
                     <span style="background: #282828; color: #b3b3b3; padding: 8px 15px; border-radius: 20px; font-size: 0.9em;">Google Cloud</span>
+                    <span style="background: #282828; color: #b3b3b3; padding: 8px 15px; border-radius: 20px; font-size: 0.9em;">Cloudflare</span>
                 </div>
             </div>
         </div>
